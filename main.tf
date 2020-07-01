@@ -1,16 +1,3 @@
-# GCP Transit Module
-module "gcp-transit" {
-  source             = "app.terraform.io/aviatrix-tf-solutions/gcp-transit/aviatrix"
-  version            = "0.0.4"
-  gcp_sub1_cidr      = var.gcp_sub1_cidr
-  gcp_sub2_cidr      = var.gcp_sub2_cidr
-  gcp_primary_region = var.gcp_primary_region
-  gcp_ha_region      = var.gcp_ha_region
-  gcp_account_name   = var.gcp_account_name
-
-}
-
-
 # Aviatrix GCP Spoke VPC
 resource "aviatrix_vpc" "gcp_spoke_vpc" {
   cloud_type           = 4
