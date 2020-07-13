@@ -1,50 +1,24 @@
-variable "username" {
-  type    = string
-  default = ""
-}
-
-variable "password" {
-  type    = string
-  default = ""
-}
-
-variable "controller_ip" {
-  type    = string
-  default = ""
-}
-
-variable "gcp_primary_region" {
-  default = ""
-}
-
-variable "gcp_ha_region" {
-  default = ""
-}
-
 variable "gcp_account_name" {
-  default = ""
+  description = "The name of the GCP Access Account in Aviatrix Controller"
+  default     = ""
 }
 
 variable "gcp_gw_size" {
-  default = "n1-standard-1"
-}
-
-variable "gcp_sub1_cidr" {
-  default = ""
-}
-
-variable "gcp_sub2_cidr" {
-  default = ""
+  description = "The size of the GCP Aviatrix Spoke Gateway"
+  default     = "n1-standard-1"
 }
 
 variable "gcp_spoke_region" {
-  default = "us-central1"
+  description = "The GCP region to launch the Spoke subnet"
+  default     = "us-central1"
 }
 
 variable "gcp_spoke_sub1_cidr" {
-  default = ""
+  description = "The CIDR of the Spoke subnet"
+  default     = ""
 }
 
-variable "gcp_transit_gw" {
-  default = ""
+variable "avx_transit_gw" {
+  description = "The name of the Aviatrix Transit Gateway to attach Spoke Gateway to"
+  default     = ""
 }
