@@ -15,6 +15,6 @@ variable "gcp_spoke_sub1_cidr" {
   description = "The CIDR of the Spoke subnet"
 }
 
-variable "avx_transit_gateway" {
+variable "transit_gateway" {
   description = "The name of the Aviatrix Transit Gateway to attach Spoke Gateway to"
 }

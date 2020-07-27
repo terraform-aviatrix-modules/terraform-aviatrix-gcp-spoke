@@ -22,5 +22,5 @@ resource "aviatrix_spoke_gateway" "gcp_spoke_gw" {
   gw_size            = var.gcp_gw_size
   subnet             = aviatrix_vpc.gcp_spoke_vpc.subnets[0].cidr
   enable_active_mesh = true
-  transit_gw         = var.avx_transit_gateway
+  transit_gw         = var.transit_gateway
 }
