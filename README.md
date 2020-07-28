@@ -11,7 +11,7 @@ key | value
 gcp_account_name | The GCP account name on the Aviatrix controller, under which the controller will deploy this VPC
 gcp_spoke_region | GCP region to deploy the spoke VPC, subnet, and gateway in
 gcp_spoke_sub1_cidr | The IP CIDR to be used to create the spoke subnet
-
+transit_gateway | The transit gateway name to attach the spoke to
 
 The following variables are optional:
 
