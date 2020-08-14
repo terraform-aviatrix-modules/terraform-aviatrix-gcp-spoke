@@ -1,3 +1,7 @@
+variable "gcp_spoke_name" {
+  type    = string
+}
+
 variable "gcp_account_name" {
   description = "The name of the GCP Access Account in Aviatrix Controller"
 }
