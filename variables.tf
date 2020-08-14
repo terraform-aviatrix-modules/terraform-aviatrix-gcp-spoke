@@ -1,5 +1,7 @@
 variable "gcp_spoke_name" {
-  type    = string
+  description = "The name of the GCP Spoke VPC, Subnet and GW"
+  type        = string
+  default     = "avx-gcp-${var.gcp_spoke_region}-spoke"
 }
 
 variable "gcp_account_name" {
