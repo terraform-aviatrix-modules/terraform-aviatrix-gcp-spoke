@@ -17,7 +17,7 @@ The following variables are optional:
 
 key | default | value
 --- | --- | ---
-gcp_spoke_name | avx-gcp-\<region\>-spoke | Name for this Spoke VPC, Subnet, and Gateway
+gcp_spoke_name | avx-gcp-spoke | Name for this Spoke VPC, Subnet, and Gateway
 instance_size | n1-standard-1 | Size of the transit gateway instances
  
 
