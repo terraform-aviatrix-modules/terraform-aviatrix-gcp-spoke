@@ -2,11 +2,11 @@
 resource "aviatrix_vpc" "gcp_spoke_vpc" {
   cloud_type           = 4
   account_name         = var.gcp_account_name
-  name                 = "av-spoke-vpc-${var.gcp_spoke_region}"
+  name                 = "${var.gcp_spoke_name}-vpc"
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
   subnets {
-    name   = "av-spoke-sub-${var.gcp_spoke_region}"
+    name   = "${var.gcp_spoke_name}-subnet"
     cidr   = var.gcp_spoke_sub1_cidr
     region = var.gcp_spoke_region
   }
@@ -16,7 +16,7 @@ resource "aviatrix_vpc" "gcp_spoke_vpc" {
 resource "aviatrix_spoke_gateway" "gcp_spoke_gw" {
   cloud_type         = 4
   account_name       = var.gcp_account_name
-  gw_name            = "av-${var.gcp_spoke_region}-spoke-gw"
+  gw_name            = "${var.gcp_spoke_name}-gw"
   vpc_id             = aviatrix_vpc.gcp_spoke_vpc.name
   vpc_reg            = "${var.gcp_spoke_region}-b"
   gw_size            = var.gcp_gw_size

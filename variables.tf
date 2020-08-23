@@ -1,3 +1,9 @@
+variable "gcp_spoke_name" {
+  description = "The name of the GCP Spoke VPC, Subnet and GW"
+  type        = string
+  default     = "avx-gcp-spoke"
+}
+
 variable "gcp_account_name" {
   description = "The name of the GCP Access Account in Aviatrix Controller"
 }
