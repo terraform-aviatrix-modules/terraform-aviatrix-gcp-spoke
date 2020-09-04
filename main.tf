@@ -35,7 +35,7 @@ resource "aviatrix_vpc" "ha_region" {
 resource "aviatrix_spoke_gateway" "single" {
   count              = var.ha_gw ? 0 : 1
   gw_name            = "avx-${var.name}-spoke"
-  vpc_id             = aviatrix_vpc.single[0].name
+  vpc_id             = aviatrix_vpc.single_region[0].name
   cloud_type         = 4
   vpc_reg            = "${var.region}-${var.az1}"
   enable_active_mesh = var.active_mesh
@@ -48,7 +48,7 @@ resource "aviatrix_spoke_gateway" "single" {
 resource "aviatrix_spoke_gateway" "ha" {
   count              = var.ha_gw ? 1 : 0
   gw_name            = "avx-${var.name}-spoke"
-  vpc_id             = aviatrix_vpc.ha[0].name
+  vpc_id             = aviatrix_vpc.ha_region[0].name
   cloud_type         = 4
   vpc_reg            = "${var.region}-${var.az1}"
   enable_active_mesh = var.active_mesh
