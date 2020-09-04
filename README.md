@@ -50,7 +50,7 @@ module "gcp_ha_spoke_1" {
   cidr               = "10.10.0.0/16"
   region             = "us-east1"
   transit_gw         = "Name-of-Aviatrix-Transit-Gateway"
-  
+
   ha_region          = "us-east4"
   ha_cidr            = "10.20.0.0/16"
 }
@@ -72,8 +72,8 @@ The following variables are optional:
 key | default | value
 --- | --- | ---
 ha_gw | true | Boolean to build HA. Cannot be set to false when ha_region is set.
-ha_region | null | GCP region for multi region HA. HA is multi-az single region by default, but will become multi region when this is set.
-ha_cidr |null| The IP CIDR to be used to create ha_region spoke subnet. Only required when ha_region is set.
+ha_region | ""  | GCP region for multi region HA. HA is multi-az single region by default, but will become multi region when this is set.
+ha_cidr | "" | The IP CIDR to be used to create ha_region spoke subnet. Only required when ha_region is set.
 instance_size | n1-standard-1 | Size of the transit gateway instances
 az1 | b | The zone to deploy the primary gateway in (override if needed)
 az2 | c | The zone to deploy the ha gateway in (override if needed)
