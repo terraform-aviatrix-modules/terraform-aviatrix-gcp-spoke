@@ -2,7 +2,44 @@
 
 This module deploys a GCP VPC and an Aviatrix spoke gateway in GCP attaching it to an Aviatrix Transit Gateway. Defining the Aviatrix Terraform provider is assumed upstream and is not part of this module.
 
+### Diagram
+
 <img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-gcp-spoke/blob/master/spoke-vpc-gcp.png?raw=true"  height="250">
+
+### Usage Example
+
+#### Single
+```
+# GCP Spoke Module
+module "gcp_spoke_1" {
+  source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
+  version            = "1.1.0"
+  
+  account            = "GCP"
+  cidr               = "10.10.0.0/16"
+  region             = "us-east1"
+  transit_gateway    = "Name-of-Aviatrix-Transit-Gateway"
+}
+
+```
+
+#### HA
+```
+# GCP HA Spoke Module
+module "gcp_ha_spoke_1" {
+  source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
+  version            = "1.1.0"
+
+  account            = "GCP"
+  cidr               = "10.10.0.0/16"
+  region             = "us-east1"
+  ha_cidr            = "10.20.0.0/16"
+  ha_gw              = true
+  ha_region          = "us-east4"
+  transit_gateway    = "Name-of-Aviatrix-Transit-Gateway"
+}
+
+```
 
 The following variables are required:
 
