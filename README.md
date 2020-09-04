@@ -4,7 +4,7 @@ This module deploys a GCP VPC and an Aviatrix spoke gateway in GCP attaching it 
 
 ### Diagram
 
-<img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-gcp-spoke/blob/master/spoke-vpc-gcp.png?raw=true"  height="250">
+<img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-gcp-spoke/blob/master/img/spoke-vpc-gcp.png?raw=true">
 
 ### Usage Example
 
