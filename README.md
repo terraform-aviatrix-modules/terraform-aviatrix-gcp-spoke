@@ -57,6 +57,7 @@ module "gcp_ha_spoke_1" {
 
 ```
 
+### Variables
 The following variables are required:
 
 key | value
