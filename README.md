@@ -15,6 +15,7 @@ module "gcp_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
   version            = "1.1.0"
   
+  name               = "spoke1"
   account            = "GCP"
   cidr               = "10.10.0.0/16"
   region             = "us-east1"
@@ -31,6 +32,7 @@ module "gcp_ha_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
   version            = "1.1.0"
 
+  name               = "spoke1"
   account            = "GCP"
   cidr               = "10.10.0.0/16"
   region             = "us-east1"
@@ -46,6 +48,7 @@ module "gcp_ha_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
   version            = "1.1.0"
 
+  name               = "spoke1"
   account            = "GCP"
   cidr               = "10.10.0.0/16"
   region             = "us-east1"
