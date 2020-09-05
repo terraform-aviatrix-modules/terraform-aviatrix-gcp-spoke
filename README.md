@@ -1,6 +1,16 @@
 # Terraform Aviatrix GCP Spoke
 
+### Description
+
 This module deploys a GCP VPC and an Aviatrix spoke gateway in GCP attaching it to an Aviatrix Transit Gateway. Defining the Aviatrix Terraform provider is assumed upstream and is not part of this module.
+
+### Compatibility
+Module version | Terraform version | Controller version | Terraform provider version
+:--- | :--- | :--- | :---
+v1.1.0 | 0.12 | | 
+v1.0.2 | 0.12 | | 
+v1.0.1 | 0.12 | |
+v1.0.0 | 0.12 | |
 
 ### Diagram
 
