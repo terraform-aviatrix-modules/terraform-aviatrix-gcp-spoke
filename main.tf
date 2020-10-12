@@ -6,7 +6,7 @@ resource "aviatrix_vpc" "single_region" {
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
   subnets {
-    name   = "avx-${var.region}-spoke"
+    name   = "avx-${var.name}-spoke"
     cidr   = var.cidr
     region = var.region
   }
