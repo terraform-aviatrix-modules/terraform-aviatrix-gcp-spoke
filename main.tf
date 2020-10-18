@@ -29,7 +29,6 @@ resource "aviatrix_spoke_gateway" "default" {
   gw_size            = var.instance_size
   account_name       = var.account
   subnet             = local.subnet
-  insane_mode        = var.insane_mode
   ha_subnet          = var.ha_gw ? local.ha_subnet : null
   ha_gw_size         = var.ha_gw ? var.instance_size : null
   ha_zone            = var.ha_gw ? local.region2 : null

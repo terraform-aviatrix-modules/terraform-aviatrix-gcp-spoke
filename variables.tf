@@ -77,12 +77,6 @@ variable "transit_gw" {
   type        = string
 }
 
-variable "insane_mode" {
-  description = "Set to true to enable Aviatrix high performance encryption."
-  type        = bool
-  default     = false
-}
-
 locals {
   lower_name = replace(lower(var.name), " ", "-")
   prefix     = var.prefix ? "avx-" : ""
