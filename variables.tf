@@ -77,6 +77,12 @@ variable "transit_gw" {
   type        = string
 }
 
+variable "insane_mode" {
+  description = "Set to true to enable Aviatrix high performance encryption."
+  type        = bool
+  default     = false
+}
+
 locals {
   lower_name        = replace(lower(var.name), " ", "-")
   prefix            = var.prefix ? "avx-" : ""
@@ -84,8 +90,6 @@ locals {
   name              = "${local.prefix}${local.lower_name}${local.suffix}"
   subnet            = length(var.ha_region) > 0 ? aviatrix_vpc.default.subnets[0].cidr : aviatrix_vpc.default.subnets[0].cidr
   ha_subnet         = length(var.ha_region) > 0 ? aviatrix_vpc.default.subnets[1].cidr : aviatrix_vpc.default.subnets[0].cidr
-  #subnet            = var.insane_mode ? cidrsubnet(var.cidr, 3, 6) : aviatrix_vpc.default.subnets[length(aviatrix_vpc.default.subnets) / 2].cidr
-  #ha_subnet         = var.insane_mode ? cidrsubnet(var.cidr, 3, 7) : aviatrix_vpc.default.subnets[length(aviatrix_vpc.default.subnets) / 2 + 1].cidr
   region1           = "${var.region}${var.az1}"
   region2           = length(var.ha_region) > 0 ? "${var.ha_region}-${var.az2}" : "${var.region}-${var.az2}"
 }

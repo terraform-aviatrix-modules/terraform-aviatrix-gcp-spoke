@@ -94,6 +94,7 @@ az1 | b | The zone to deploy the primary gateway in (override if needed)
 az2 | c | The zone to deploy the ha gateway in (override if needed)
 prefix | true | Boolean to enable prefix name with avx-
 suffix | true | Boolean to enable suffix name with -spoke
+insane_mode | false | Set to true to enable insane mode encryption
 
 Outputs
 This module will return the following objects:
