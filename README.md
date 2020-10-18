@@ -24,7 +24,7 @@ v1.0.0 | 0.12 | |
 # GCP Spoke Module
 module "gcp_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
-  version            = "1.1.0"
+  version            = "1.2.0"
   
   name               = "spoke1"
   account            = "GCP"
@@ -41,7 +41,7 @@ module "gcp_spoke_1" {
 # GCP HA Spoke Module
 module "gcp_ha_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
-  version            = "1.1.0"
+  version            = "1.2.0"
 
   name               = "spoke1"
   account            = "GCP"
@@ -57,7 +57,7 @@ module "gcp_ha_spoke_1" {
 # GCP HA Spoke Module
 module "gcp_ha_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
-  version            = "1.1.0"
+  version            = "1.2.0"
 
   name               = "spoke1"
   account            = "GCP"
@@ -94,6 +94,8 @@ az1 | b | The zone to deploy the primary gateway in (override if needed)
 az2 | c | The zone to deploy the ha gateway in (override if needed)
 prefix | true | Boolean to enable prefix name with avx-
 suffix | true | Boolean to enable suffix name with -spoke
+insane_mode | false | Set to true to enable Aviatrix insane mode high-performance encryption
+
 
 Outputs
 This module will return the following objects:

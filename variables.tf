@@ -77,6 +77,12 @@ variable "transit_gw" {
   type        = string
 }
 
+variable "insane_mode" {
+  description = "Boolean to enable insane mode"
+  type        = bool
+  default     = false
+}
+
 locals {
   lower_name = replace(lower(var.name), " ", "-")
   prefix     = var.prefix ? "avx-" : ""
