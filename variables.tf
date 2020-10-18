@@ -54,6 +54,18 @@ variable "name" {
   type        = string
 }
 
+variable "prefix" {
+  description = "Boolean to determine if name will be prepended with avx-"
+  type        = bool
+  default     = true
+}
+
+variable "suffix" {
+  description = "Boolean to determine if name will be appended with -spoke"
+  type        = bool
+  default     = true
+}
+
 variable "active_mesh" {
   description = "Boolean to modify Active Mesh if needed"
   type        = bool
@@ -63,4 +75,21 @@ variable "active_mesh" {
 variable "transit_gw" {
   description = "Name of the Aviatrix Transit Gateway to attach the GCP spoke to"
   type        = string
+}
+
+variable "insane_mode" {
+  description = "Set to true to enable Aviatrix high performance encryption."
+  type        = bool
+  default     = false
+}
+
+locals {
+  lower_name = replace(lower(var.name), " ", "-")
+  prefix     = var.prefix ? "avx-" : ""
+  suffix     = var.suffix ? "-spoke" : ""
+  name       = "${local.prefix}${local.lower_name}${local.suffix}"
+  subnet     = length(var.ha_region) > 0 ? aviatrix_vpc.default.subnets[0].cidr : aviatrix_vpc.default.subnets[0].cidr
+  ha_subnet  = length(var.ha_region) > 0 ? aviatrix_vpc.default.subnets[1].cidr : aviatrix_vpc.default.subnets[0].cidr
+  region1    = "${var.region}-${var.az1}"
+  region2    = length(var.ha_region) > 0 ? "${var.ha_region}-${var.az2}" : "${var.region}-${var.az2}"
 }
