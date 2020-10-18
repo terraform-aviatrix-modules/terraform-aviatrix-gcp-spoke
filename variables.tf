@@ -90,6 +90,6 @@ locals {
   name       = "${local.prefix}${local.lower_name}${local.suffix}"
   subnet     = length(var.ha_region) > 0 ? aviatrix_vpc.default.subnets[0].cidr : aviatrix_vpc.default.subnets[0].cidr
   ha_subnet  = length(var.ha_region) > 0 ? aviatrix_vpc.default.subnets[1].cidr : aviatrix_vpc.default.subnets[0].cidr
-  region1    = "${var.region}${var.az1}"
+  region1    = "${var.region}-${var.az1}"
   region2    = length(var.ha_region) > 0 ? "${var.ha_region}-${var.az2}" : "${var.region}-${var.az2}"
 }
