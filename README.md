@@ -7,6 +7,7 @@ This module deploys a GCP VPC and an Aviatrix spoke gateway in GCP attaching it 
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v1.1.1 | 0.12 | | 
 v1.1.0 | 0.12 | | 
 v1.0.2 | 0.12 | | 
 v1.0.1 | 0.12 | |
@@ -91,6 +92,8 @@ ha_cidr | "" | The IP CIDR to be used to create ha_region spoke subnet. Only req
 instance_size | n1-standard-1 | Size of the transit gateway instances
 az1 | b | The zone to deploy the primary gateway in (override if needed)
 az2 | c | The zone to deploy the ha gateway in (override if needed)
+prefix | true | Boolean to enable prefix name with avx-
+suffix | true | Boolean to enable suffix name with -spoke
 
 Outputs
 This module will return the following objects:
