@@ -7,6 +7,7 @@ This module deploys a GCP VPC and an Aviatrix spoke gateway in GCP attaching it 
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v2.0.0 | 0.12 | >=6.2 | >=0.2.17
 v1.1.1 | 0.12 | | 
 v1.1.0 | 0.12 | | 
 v1.0.2 | 0.12 | | 
@@ -24,7 +25,7 @@ v1.0.0 | 0.12 | |
 # GCP Spoke Module
 module "gcp_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
-  version            = "1.2.0"
+  version            = "2.0.0"
   
   name               = "spoke1"
   account            = "GCP"
@@ -41,7 +42,7 @@ module "gcp_spoke_1" {
 # GCP HA Spoke Module
 module "gcp_ha_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
-  version            = "1.2.0"
+  version            = "2.0.0"
 
   name               = "spoke1"
   account            = "GCP"
@@ -57,7 +58,7 @@ module "gcp_ha_spoke_1" {
 # GCP HA Spoke Module
 module "gcp_ha_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
-  version            = "1.2.0"
+  version            = "2.0.0"
 
   name               = "spoke1"
   account            = "GCP"
@@ -95,7 +96,8 @@ az2 | c | The zone to deploy the ha gateway in (override if needed)
 prefix | true | Boolean to enable prefix name with avx-
 suffix | true | Boolean to enable suffix name with -spoke
 insane_mode | false | Set to true to enable Aviatrix insane mode high-performance encryption
-
+attached | true | Set to false if you don't want to attach spoke to transit.
+security_domain | Provide security domain name to which spoke needs to be deployed. Transit gateway must be attached and have segmentation enabled.
 
 Outputs
 This module will return the following objects:

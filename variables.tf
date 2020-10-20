@@ -83,6 +83,18 @@ variable "insane_mode" {
   default     = false
 }
 
+variable "attached" {
+  description = "Set to false if you don't want to attach spoke to transit."
+  type        = bool
+  default     = true
+}
+
+variable "security_domain" {
+  description = "Provide security domain name to which spoke needs to be deployed. Transit gateway mus tbe attached and have segmentation enabled."
+  type        = string
+  default     = ""
+}
+
 locals {
   lower_name = replace(lower(var.name), " ", "-")
   prefix     = var.prefix ? "avx-" : ""
