@@ -21,19 +21,20 @@ resource "aviatrix_vpc" "default" {
 }
 
 resource "aviatrix_spoke_gateway" "default" {
-  gw_name            = local.name
-  vpc_id             = aviatrix_vpc.default.name
-  cloud_type         = 4
-  vpc_reg            = local.region1
-  enable_active_mesh = var.active_mesh
-  gw_size            = var.instance_size
-  account_name       = var.account
-  subnet             = local.subnet
-  insane_mode        = var.insane_mode
-  ha_subnet          = var.ha_gw ? local.ha_subnet : null
-  ha_gw_size         = var.ha_gw ? var.instance_size : null
-  ha_zone            = var.ha_gw ? local.region2 : null
-  transit_gw         = var.transit_gw
+  gw_name                           = local.name
+  vpc_id                            = aviatrix_vpc.default.name
+  cloud_type                        = 4
+  vpc_reg                           = local.region1
+  enable_active_mesh                = var.active_mesh
+  gw_size                           = var.instance_size
+  account_name                      = var.account
+  subnet                            = local.subnet
+  insane_mode                       = var.insane_mode
+  ha_subnet                         = var.ha_gw ? local.ha_subnet : null
+  ha_gw_size                        = var.ha_gw ? var.instance_size : null
+  ha_zone                           = var.ha_gw ? local.region2 : null
+  transit_gw                        = var.transit_gw
+  manage_transit_gateway_attachment = false
 }
 
 resource "aviatrix_spoke_transit_attachment" "default" {
