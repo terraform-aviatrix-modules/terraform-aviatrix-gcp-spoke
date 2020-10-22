@@ -33,7 +33,6 @@ resource "aviatrix_spoke_gateway" "default" {
   ha_subnet                         = var.ha_gw ? local.ha_subnet : null
   ha_gw_size                        = var.ha_gw ? var.instance_size : null
   ha_zone                           = var.ha_gw ? local.region2 : null
-  transit_gw                        = var.transit_gw
   manage_transit_gateway_attachment = false
 }
 
