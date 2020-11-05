@@ -34,6 +34,11 @@ resource "aviatrix_spoke_gateway" "default" {
   ha_gw_size                        = var.ha_gw ? var.instance_size : null
   ha_zone                           = var.ha_gw ? local.region2 : null
   manage_transit_gateway_attachment = false
+  single_az_ha                      = var.single_az_ha
+  single_ip_snat                    = var.single_ip_snat
+  customized_spoke_vpc_routes       = var.customized_spoke_vpc_routes
+  filtered_spoke_vpc_routes         = var.filtered_spoke_vpc_routes
+  included_advertised_spoke_routes  = var.included_advertised_spoke_routes
 }
 
 resource "aviatrix_spoke_transit_attachment" "default" {
