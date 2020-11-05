@@ -97,7 +97,7 @@ prefix | true | Boolean to enable prefix name with avx-
 suffix | true | Boolean to enable suffix name with -spoke
 insane_mode | false | Set to true to enable Aviatrix insane mode high-performance encryption
 attached | true | Set to false if you don't want to attach spoke to transit.
-security_domain | Provide security domain name to which spoke needs to be deployed. Transit gateway must be attached and have segmentation enabled.
+security_domain | | Provide security domain name to which spoke needs to be deployed. Transit gateway must be attached and have segmentation enabled.
 single_az_ha | true | Set to false if Controller managed Gateway HA is desired
 single_ip_snat | false | Specify whether to enable Source NAT feature in single_ip mode on the gateway or not. Please disable AWS NAT instance before enabling this feature. Currently only supports AWS(1) and AZURE(8)
 customized_spoke_vpc_routes | | A list of comma separated CIDRs to be customized for the spoke VPC routes. When configured, it will replace all learned routes in VPC routing tables, including RFC1918 and non-RFC1918 CIDRs. Example: 10.0.0.0/116,10.2.0.0/16
