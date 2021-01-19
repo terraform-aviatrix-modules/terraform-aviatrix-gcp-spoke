@@ -10,7 +10,7 @@ resource "aviatrix_vpc" "default" {
     region = var.region
   }
 
-  dynamic subnets {
+  dynamic "subnets" {
     for_each = length(var.ha_region) > 0 ? ["dummy"] : []
     content {
       name   = "${local.name}-ha"
