@@ -7,6 +7,7 @@ This module deploys a GCP VPC and an Aviatrix spoke gateway in GCP attaching it 
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v3.0.0 | 0.13 | >=6.2 | >=0.2.17
 v2.0.0 | 0.12 | >=6.2 | >=0.2.17
 v1.1.1 | 0.12 | | 
 v1.1.0 | 0.12 | | 
@@ -25,7 +26,7 @@ v1.0.0 | 0.12 | |
 # GCP Spoke Module
 module "gcp_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
-  version            = "2.0.0"
+  version            = "3.0.0"
   
   name               = "spoke1"
   account            = "GCP"
@@ -42,7 +43,7 @@ module "gcp_spoke_1" {
 # GCP HA Spoke Module
 module "gcp_ha_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
-  version            = "2.0.0"
+  version            = "3.0.0"
 
   name               = "spoke1"
   account            = "GCP"
@@ -58,7 +59,7 @@ module "gcp_ha_spoke_1" {
 # GCP HA Spoke Module
 module "gcp_ha_spoke_1" {
   source             = "terraform-aviatrix-modules/gcp-spoke/aviatrix"
-  version            = "2.0.0"
+  version            = "3.0.0"
 
   name               = "spoke1"
   account            = "GCP"
