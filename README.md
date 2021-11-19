@@ -110,5 +110,6 @@ This module will return the following objects:
 
 key | description
 --- | ---
-vpc | The created vpc as an object with all of it's attributes. This was created using the aviatrix_vpc resource.
-spoke_gateway | The created Aviatrix spoke gateway as an object with all of it's attributes.
+[vpc](https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest/docs/resources/aviatrix_vpc) | The created VPC as an object with all of it's attributes (when use_existing_vpc is false). This was created using the aviatrix_vpc resource.
+[spoke_gateway](https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest/docs/resources/aviatrix_spoke_gateway) | The created Aviatrix spoke gateway as an object with all of it's attributes.
+
