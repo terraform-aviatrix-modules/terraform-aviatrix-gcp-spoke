@@ -12,6 +12,7 @@ This module deploys a GCP VPC and an Aviatrix spoke gateway in GCP attaching it 
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v9.9.9 | 0.13, 0.14, 0.15 | >=6.4 | 2.21.1
 v3.0.0 | 0.13 | >=6.2 | >=0.2.17
 v2.0.0 | 0.12 | >=6.2 | >=0.2.17
 v1.1.1 | 0.12 | | 
