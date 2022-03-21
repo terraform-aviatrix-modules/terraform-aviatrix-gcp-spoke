@@ -66,12 +66,6 @@ variable "suffix" {
   default     = true
 }
 
-variable "active_mesh" {
-  description = "Boolean to modify Active Mesh if needed"
-  type        = bool
-  default     = true
-}
-
 variable "transit_gw" {
   description = "Name of the Aviatrix Transit Gateway to attach the GCP spoke to"
   type        = string
